@@ -1,8 +1,12 @@
 const express = require('express');
+const multer = require('multer');
+const uploadConfig = require('./config/upload');
+
+const userController = require('./controller/userController');
+
 const routes = express.Router();
+const upload = multer(uploadConfig);
 
-const userSchema = require("./controller/userController");
-
-routes.post('/', userSchema.index);
+routes.post('/chat', upload.single('image'), userController.index);
 
 module.exports = routes;

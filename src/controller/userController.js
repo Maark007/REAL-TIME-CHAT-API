@@ -1,11 +1,13 @@
-const userSchema = require('../model/userModel');
+const imageModel = require('../model/userModel'); 
 
 module.exports = {
     async index(req, res) {
-         const register = new userSchema(req.body);
+        const { filename: image } = req.file;
 
-         const response = await register.save();
+        const sendImage = await imageModel.create({
+            image,
+        });
 
-         response.send('Usuario cadastrado!')
+        return res.json(sendImage)
     },
 }
