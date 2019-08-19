@@ -20,10 +20,6 @@ app.use((req, res, next) => {
     return next();
 });
 
-app.get('/', (req, res) => {
-   res.send('WORKING!');
-});
-
 io.on('connection', socket => {
     console.log(`Usuario conectado: ${socket.id}`);
 });
