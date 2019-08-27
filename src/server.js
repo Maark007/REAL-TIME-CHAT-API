@@ -1,6 +1,7 @@
 const express = require('express');
-const mongoose = require('mongoose'); 
+const mongoose = require('mongoose');
 const cors = require('cors');
+const router = require('./routes');
 
 const app = express();
 
@@ -13,7 +14,7 @@ mongoose.connect('mongodb://mark:mark123@ds021356.mlab.com:21356/whatschat', {
 
 app.use(cors());
 app.use(express.json());
-app.use(require('./routes'));
+app.use(router);
 
 app.use((req, res, next) => {
     req.io = io;
@@ -25,6 +26,6 @@ io.on('connection', socket => {
 });
 
 server.listen(process.env.PORT || 3333, () => {
-   console.log("Server ON :)")
+    console.log("Server ON :)")
 });
 
