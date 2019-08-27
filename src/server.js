@@ -12,14 +12,14 @@ mongoose.connect('mongodb://mark:mark123@ds021356.mlab.com:21356/whatschat', {
     useNewUrlParser: true,
 });
 
-app.use(cors());
-app.use(express.json());
-app.use(router);
-
 app.use((req, res, next) => {
     req.io = io;
     return next();
 });
+
+app.use(cors());
+app.use(express.json());
+app.use(router);
 
 io.on('connection', socket => {
     console.log(`Usuario conectado: ${socket.id}`);
