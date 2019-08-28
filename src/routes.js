@@ -7,7 +7,7 @@ router.use(bodyParser.urlencoded({ extended: false }));
 
 let messages = [];
 
-router.get('/mensagens', res => {
+router.get('/mensagens', (req, res) => {
     return res.status(200).send(messages)
 });
 
