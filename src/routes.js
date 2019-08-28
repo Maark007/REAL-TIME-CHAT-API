@@ -19,6 +19,8 @@ router.post("/message", async (req, res) => {
     }
 })
 
-router.get('/messages', [messages]);
+router.get('/messages', res => {
+    return res.status(200).send(messages)
+});
 
 module.exports = router
