@@ -20,7 +20,7 @@ router.post("/message", async (req, res) => {
 })
 
 router.get('/mensages', res => {
-    return res.status(200).send(mensages)
+    return res.status(200).send(messages)
 });
 
 module.exports = router
