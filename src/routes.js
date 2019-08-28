@@ -19,4 +19,6 @@ router.post("/message", async (req, res) => {
     }
 })
 
+router.get('/messages', [messages]);
+
 module.exports = router
