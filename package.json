@@ -11,6 +11,7 @@
     "socket.io": "^2.2.0"
   },
   "scripts": {
+    "build": "next build",
     "start": "node src/server.js",
     "dev": "nodemon src/server.js"
   },
