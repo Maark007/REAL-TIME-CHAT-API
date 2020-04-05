@@ -8,8 +8,9 @@ const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
-mongoose.connect('mongodb://mark:mark123@ds021356.mlab.com:21356/whatschat', {
+mongoose.connect('mongodb+srv://Maark:marcos062@cluster0-o1a2q.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true,
+    useUnifiedTopology: true
 });
 
 app.use((req, res, next) => {
