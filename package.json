@@ -14,7 +14,6 @@
     "node": "12.14.1"
   },
   "scripts": {
-    "build": "next build",
     "start": "node src/server.js",
     "dev": "nodemon src/server.js"
   },
